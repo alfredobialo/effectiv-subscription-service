@@ -1,7 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { App } from './app/app';
+import { BlitzApp} from './app/app';
 import { config } from './app/app.config.server';
 
-const bootstrap = () => bootstrapApplication(App, config);
+const bootstrap = () => bootstrapApplication(BlitzApp, config);
 
 export default bootstrap;

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("../public/fonts/lineawesome/css/line-awesome.min.css");
+@import "tailwindcss";
+:root {
+  --color-blitz-primary: #393737;
+  --color-blitz-secondary: oklch(0.407 0.014 196.61);
+}
+
+
+@theme {
+  --font-roboto-flex: "Roboto Flex";
+  --font-roboto-regular: "Roboto", sans-serif;
+  --color-blitz-primary: var(--color-blitz-primary);
+  --color-blitz-secondary: var(--color-blitz-secondary);
+  --breakpoint-4k: 240rem;
+  --breakpoint-2k: 128rem;
+  --breakpoint-hd: 80rem;
+  --breakpoint-fhd: 96rem;
+  --breakpoint-tab-p: 48rem;
+  --breakpoint-tab-l: 64rem;
+}
