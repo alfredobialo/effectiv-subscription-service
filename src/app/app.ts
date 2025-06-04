@@ -6,7 +6,7 @@ import {BlitzBanner} from '../b-components/blitzBanner';
   selector: 'BlitzApp',
   imports: [RouterOutlet, BlitzTopNav, BlitzBanner],
   template: `
-    <div class="min-h-screen bg-white mx-auto w-[96%] mt-[2vw] px-6 py-4 4k:w-[1920px] fhd:w-[70%] hd:w-[85%]">
+    <div class="relative overflow-hidden  min-h-screen rounded-xl shadow-xl bg-white mx-auto w-[96%] mt-[2vw] px-6 py-4 4k:w-[1920px] fhd:w-[70%] hd:w-[85%]">
       <BlitzTopNav />
       <BlitzBanner />
       <router-outlet />
