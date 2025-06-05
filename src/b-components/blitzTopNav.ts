@@ -44,11 +44,6 @@ import {Component, effect, signal} from '@angular/core';
 export class BlitzTopNav {
   menus = ['services', 'projects', 'about'];
   showMenu = signal(false);
-  constructor() {
-    effect(() => {
-      console.log(this.showMenu());
-    });
-  }
   toggleMenu = () => {
     console.log("Menu Clicked!");
     if(this.showMenu()){
