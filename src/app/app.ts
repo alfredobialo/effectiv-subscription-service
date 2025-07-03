@@ -1,15 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, linkedSignal, signal} from '@angular/core';
 import {SalesDashboard} from '../sales-app/salesDashboard';
 
 @Component({
   selector: 'App',
   imports: [
-    SalesDashboard
+    SalesDashboard,
+
   ],
   template: `
-
     <SalesDashboard />
   `
 })
 export class App {
+
 }
