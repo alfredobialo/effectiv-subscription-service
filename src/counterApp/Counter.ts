@@ -7,8 +7,8 @@ import {CounterStore} from '../shared/store/CounterStore';
   },
   selector: 'Counter',
   template: `
-    <div class="rounded-lg bg-pink-100 min-h-28 md:w-[300px] p-4">
-      <h1 class="text-2xl text-center">Counter App</h1>
+    <div class="rounded-lg bg-stone-100 shadow min-h-28 md:w-[300px] p-4">
+      <h1 class="text-2xl text-center text-shadow-stone-600">Counter App</h1>
       <div class="flex flex-col justify-between ">
             <p class=" text-6xl text-center text-pink-700 text-shadow-2xs" (animationend)="animationEnded($event)"  [class]="counterAnimation()">{{counter()}}</p>
         <div class="flex justify-between p-1 ">
