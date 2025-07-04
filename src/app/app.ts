@@ -1,4 +1,4 @@
-import {Component, linkedSignal, signal} from '@angular/core';
+import {Component} from '@angular/core';
 import {SalesDashboard} from '../sales-app/salesDashboard';
 
 @Component({

@@ -20,3 +20,7 @@
   --breakpoint-tab: 48rem;
   --breakpoint-tab-l: 64rem;
 }
+
+a.nav-menu-active{
+  @apply bg-blue-800 text-white ring-blue-400 ring-4;
+}

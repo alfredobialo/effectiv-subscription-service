@@ -21,11 +21,11 @@ import {SignOut} from './SignOut';
         <div class="flex flex-col items-center">
           <AppLogo />
 
-          <NavMenu />
-          <NavMenu />
-          <NavMenu />
-          <NavMenu />
-          <NavMenu />
+          <NavMenu [isActive]="true" iconClass="las la-phone-volume" />
+          <NavMenu iconClass="las la-piggy-bank" />
+          <NavMenu iconClass="las la-chart-pie"/>
+          <NavMenu iconClass="las la-user-lock"/>
+          <NavMenu iconClass="las la-tools"/>
 
         </div>
 
