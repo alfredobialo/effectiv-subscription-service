@@ -1,19 +1,22 @@
 import {Component, inject, signal} from '@angular/core';
 import {CounterStore} from '../shared/store/CounterStore';
+import {RippleModule} from 'primeng/ripple';
+import {ButtonModule} from 'primeng/button';
 
 @Component({
   host:{
 
   },
+  imports:[ButtonModule, RippleModule],
   selector: 'Counter',
   template: `
     <div class="rounded-lg bg-red-200 shadow min-h-28 md:w-[300px] p-4">
       <h1 class="text-2xl text-center text-shadow-stone-600">Counter App</h1>
       <div class="flex flex-col justify-between ">
-            <p class=" text-6xl text-center text-pink-700 text-shadow-2xs"   [class]="counterAnimation()">{{counter()}}</p>
+        <p class=" text-6xl text-center text-pink-700 text-shadow-2xs" [class]="counterAnimation()">{{ counter() }}</p>
         <div class="flex justify-between p-1 ">
-          <button (click)="increment()" class="px-3 py-2 hover:shadow-md bg-blue-600 hover:bg-blue-800 duration-300 hover:ring-bg-blue-500 hover:ring-2 text-white/90 hover:text-white hover:translate-y-1 rounded-lg">Increment</button>
-          <button (click)="decrement()" class="px-3 py-2 hover:shadow-md bg-blue-600 hover:bg-blue-800 duration-300 hover:ring-bg-blue-500 hover:ring-2 text-white/90 hover:text-white hover:translate-y-1 rounded-lg">Decrement</button>
+          <button (click)="increment()" pButton pRipple>Increment</button>
+          <button (click)="decrement()" pButton pRipple>Decrement</button>
         </div>
       </div>
     </div>

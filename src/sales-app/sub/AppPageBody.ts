@@ -10,15 +10,15 @@ import {ManageWarehouses} from '../../features/warehouse/config/manage-warehouse
     ManageWarehouses
   ],
   template: `
-    <div class="h-full   bg-white rounded-2xl">
+    <div class="h-full   bg-primary-100 rounded-2xl">
       <div class="lg:flex  gap-2 lg:justify-between min-h-[60vh]">
-        <div class="flex-3/4 px-4 md:px-6 py-3 md:py-6 bg-gray-100 rounded">
+        <div class="flex-3/4 px-4 md:px-6 py-3 md:py-6 dark:bg-primary-700 bg-neutral-100 ">
           <ManageWarehouses />
 
         </div>
         <div>
           <Counter />
-          Right Content
+
         </div>
 
 

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("../public/fonts/lineawesome/css/line-awesome.min.css");
 @import "tailwindcss";
+@plugin "tailwindcss-primeui";
+@custom-variant dark (&:where(.theme, .theme *));
 :root {
   --color-blitz-primary: #393737;
   --color-blitz-secondary: oklch(0.407 0.014 196.61);

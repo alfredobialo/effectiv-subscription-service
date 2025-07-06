@@ -5,7 +5,7 @@ import {NavMenu} from './NavMenu';
 import {SignOut} from './SignOut';
 
 @Component({
-  selector: 'AppNavBar',
+  selector: 'AppNavBar, app-navbar, app-nav-bar, appNavBar',
   host: {},
   imports: [
     AppLogo,
@@ -15,11 +15,13 @@ import {SignOut} from './SignOut';
   standalone: true,
   template: `
     @if (menuState.showMenu()) {
-      <div class=" w-[60px] z-20
+      <div class=" w-[60px] z-20 bg-primary-200 dark:bg-surface-900
         md:w-[85px] flex flex-col items-center justify-between
         me-2 p-3 fixed top-0 bottom-0 left-0">
         <div class="flex flex-col items-center">
-          <AppLogo />
+          <AppLogo >
+               <img src="images/chioma-iwuh2.jpg" alt="" width="55px" class="object-fill rounded-full">
+          </AppLogo>
 
           <NavMenu [isActive]="true" iconClass="las la-phone-volume" />
           <NavMenu iconClass="las la-piggy-bank" />

@@ -1,16 +1,29 @@
 import { Component } from '@angular/core';
+import {ButtonModule} from 'primeng/button';
+import {componentCreatedAnimation} from '../../../shared/animations/CustomAnimations';
 
 @Component({
   selector: 'ManageWarehouses',
-  imports: [],
+  imports: [ButtonModule],
   template: `
+
     <p>
       manage-warehouses works!
       <img [src]="mainImg" class="w-[300px] duration-300 transition-all" >
-      <button class="px-3 py-1.5 bg-blue-500 text-white rounded-md mt-1" (click)="swapImages()">Swap Images</button>
+      <br>
+      <p-button label="Testing PrimeNg"></p-button>
     </p>
   `,
-  styles: ``
+  styles: `
+
+  `,
+  animations: [
+    componentCreatedAnimation
+  ],
+  host: {
+    "[@cmp-enter]": "true",
+    "class" : "p-8 text-2xl block"
+  }
 })
 export class ManageWarehouses {
   img1 = "images/munachi-ads-02.png";

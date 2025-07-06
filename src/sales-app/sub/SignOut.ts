@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   template: `
     <button href="#" title="Sign out" class="size-[45px] md:size-[55px] mt-3
        hover:text-red-500 hover:ring-1 hover:ring-offset-red-600 duration-300
-      bg-white rounded-full flex justify-center items-center">
+      bg-white dark:bg-surface-600 rounded-full flex justify-center items-center">
 
       <i class="la-sign-out la la-2x "></i>
     </button>
