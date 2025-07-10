@@ -7,6 +7,8 @@ import {providePrimeNG} from 'primeng/config';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {provideHttpClient, withFetch} from '@angular/common/http';
 import {EffectivSubscriptionTheme} from "../themes/EffectivSubscriptionTheme";
+import {OliveTheme} from '../themes/OliveTheme';
+import {PumkinTheme} from '../themes/PumkinTheme';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -18,7 +20,7 @@ export const appConfig: ApplicationConfig = {
     providePrimeNG({
       ripple: true,
       theme : {
-        preset: EffectivSubscriptionTheme,
+        preset: PumkinTheme,//OliveTheme
         options : {
           darkModeSelector: '.theme'
         }

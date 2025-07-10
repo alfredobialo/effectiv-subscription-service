@@ -24,5 +24,5 @@
 }
 
 a.nav-menu-active{
-  @apply bg-blue-800 text-white ring-blue-400 ring-4;
+  @apply dark:bg-primary-800 bg-primary-400 text-white ring-primary-800 dark:ring-primary-400 ring-4;
 }
