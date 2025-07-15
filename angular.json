@@ -38,6 +38,10 @@
           "path": "src/shared/guards",
           "skipTests": true,
           "flat": true
+        },
+        "@schematics/angular:class": {
+          "path": "src/shared/models",
+          "skipTests": true
         }
       },
       "root": "",

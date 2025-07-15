@@ -5,8 +5,8 @@ import {MenuStateService} from '../../sales-app/services/MenuStateService';
   standalone: true,
   selector: 'CurrentUserInfo',
   template: `
-    <div class="flex min-w-xs gap-x-6 justify-end items-center py-2 px-2 md:px-3 rounded-4xl shadow">
-      <button class="size-11 rounded-full dark:bg-surface-800 bg-primary-700 cursor-pointer text-white"
+    <div class="flex min-w-xs gap-x-6 justify-end items-center py-2 px-2 md:px-3">
+      <button class="size-12 rounded-full dark:bg-surface-800 bg-primary-700 cursor-pointer text-white"
       (click)="toggleDarkMode()" >
         <i class="las la-2x la-moon"></i>
       </button>

@@ -26,3 +26,6 @@
 a.nav-menu-active{
   @apply dark:bg-primary-800 bg-primary-400 text-white ring-primary-800 dark:ring-primary-400 ring-4;
 }
+h1{
+  @apply leading-tight text-2xl lg:text-4xl;
+}
