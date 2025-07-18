@@ -5,7 +5,50 @@
   "projects": {
     "effectiv-subscription-service": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "flat": true,
+          "inlineStyle": true,
+          "inlineTemplate": true,
+          "path": "src/features",
+          "prefix": "",
+          "skipTests": true,
+          "style": "none",
+          "displayBlock": true
+        },
+        "@schematics/angular:interceptor": {
+          "functional": true,
+          "path": "src/shared/interceptors",
+          "skipTests": true,
+          "flat": true
+        },
+        "@schematics/angular:service": {
+          "path": "src/shared/services",
+          "skipTests": true,
+          "flat": true
+        },
+        "@schematics/angular:resolver": {
+          "functional": true,
+          "path": "src/shared/resolvers",
+          "skipTests": true,
+          "flat": true
+        },
+        "@schematics/angular:directive": {
+          "flat": true,
+          "skipTests": true,
+          "path": "src/shared/directives"
+        },
+        "@schematics/angular:guard": {
+          "functional": true,
+          "path": "src/shared/guards",
+          "skipTests": true,
+          "flat": true
+        },
+        "@schematics/angular:class": {
+          "path": "src/shared/models",
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

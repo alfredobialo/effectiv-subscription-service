@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("../public/fonts/lineawesome/css/line-awesome.min.css");
 @import "tailwindcss";
+@plugin "tailwindcss-primeui";
+@custom-variant dark (&:where(.theme, .theme *));
 :root {
   --color-blitz-primary: #393737;
   --color-blitz-secondary: oklch(0.407 0.014 196.61);
@@ -19,4 +21,11 @@
   --breakpoint-tab-p: 48rem;
   --breakpoint-tab: 48rem;
   --breakpoint-tab-l: 64rem;
+}
+
+a.nav-menu-active{
+  @apply dark:bg-primary-800 bg-primary-400 text-white ring-primary-800 dark:ring-primary-400 ring-4;
+}
+h1{
+  @apply leading-tight text-2xl lg:text-4xl;
 }

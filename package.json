@@ -11,27 +11,37 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^20.0.0",
-    "@angular/common": "^20.0.0",
-    "@angular/compiler": "^20.0.0",
-    "@angular/core": "^20.0.0",
-    "@angular/forms": "^20.0.0",
-    "@angular/platform-browser": "^20.0.0",
-    "@angular/platform-server": "^20.0.0",
-    "@angular/router": "^20.0.0",
-    "@angular/ssr": "^20.0.0",
-    "@tailwindcss/postcss": "^4.1.8",
+    "@angular/animations": "^20.1.0",
+    "@angular/common": "^20.1.0",
+    "@angular/compiler": "^20.1.0",
+    "@angular/core": "^20.1.0",
+    "@angular/forms": "^20.1.0",
+    "@angular/platform-browser": "^20.1.0",
+    "@angular/platform-server": "^20.1.0",
+    "@angular/router": "^20.1.0",
+    "@angular/ssr": "^20.1.0",
+    "@tailwindcss/postcss": "^4.1.10",
+    "tailwindcss": "^4.1.10",
+    "@ngrx/signals": "^19.2.1",
+    "@ngrx/operators": "^19.2.1",
+    "primeng": "~20.0.0-rc.3",
+    "@primeng/themes": "~20.0.0-rc.3",
+    "chart.js": "^4.4.7",
+    "quill": "^2.0.3",
+    "tailwindcss-primeui": "^0.6.1",
+    "@microsoft/signalr": "^8.0.7",
+    "luxon": "^3.5.0",
+    "openid-client": "^6.1.7",
     "express": "^5.1.0",
     "postcss": "^8.5.4",
     "rxjs": "~7.8.0",
-    "tailwindcss": "^4.1.8",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "^20.0.0",
-    "@angular/cli": "^20.0.0",
-    "@angular/compiler-cli": "^20.0.0",
+    "@angular/build": "^20.1.0",
+    "@angular/cli": "^20.1.0",
+    "@angular/compiler-cli": "^20.1.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
@@ -42,5 +52,13 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.8.2"
+  },
+  "overrides": {
+    "@ngrx/signals": {
+      "@angular/core": "^19.2.8"
+    },
+    "@ngrx/operators": {
+      "@angular/core": "^19.2.8"
+    }
   }
 }
