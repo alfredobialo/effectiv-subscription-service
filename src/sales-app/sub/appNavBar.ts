@@ -19,9 +19,8 @@ import {SignOut} from './SignOut';
         md:w-[85px] flex flex-col items-center justify-between
         me-2 p-3 fixed top-0 bottom-0 left-0">
         <div class="flex flex-col items-center">
-          <AppLogo >
-               <img src="images/chioma-iwuh2.jpg" alt="" width="55px" class="object-fill rounded-full">
-          </AppLogo>
+          <AppLogo />
+
 
           <NavMenu [isActive]="true" iconClass="las la-phone-volume" />
           <NavMenu iconClass="las la-piggy-bank" />

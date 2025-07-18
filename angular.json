@@ -22,6 +22,11 @@
           "skipTests": true,
           "flat": true
         },
+        "@schematics/angular:service": {
+          "path": "src/shared/services",
+          "skipTests": true,
+          "flat": true
+        },
         "@schematics/angular:resolver": {
           "functional": true,
           "path": "src/shared/resolvers",

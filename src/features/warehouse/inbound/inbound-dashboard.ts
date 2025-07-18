@@ -12,7 +12,7 @@ import {CommonModule} from '@angular/common';
 
     <div class="">
       @for(w of inboundList; track  w.warehouseId) {
-        <div class="rounded-lg p-4 mb-3 bg-red-800 shadow h-32">
+        <div class="rounded-lg p-4 mb-3 dark:bg-surface-700 shadow-2xs bg-primary-200 h-32">
           <span>Warehouse Name </span>
           <span class="font-bold">{{ w.warehouseName }}</span>
           <p class="">Total Inbound: <span>{{w.inbound | number}}</span></p>
@@ -20,8 +20,8 @@ import {CommonModule} from '@angular/common';
       }
 
       <div class="flex gap-1 relative">
-        @for(abc of [1,2,3,4,5]; track abc) {
-          <a class="size-16 ring-2 ring-white dark:bg-primary-700 bg-surface-100 rounded-full flex justify-center items-center absolute "
+        @for(abc of [1,2,3,4]; track abc) {
+          <a class="size-16 ring-2 ring-white dark:bg-primary-700 bg-surface-300 rounded-full flex justify-center items-center absolute "
              [style]="getCssPos($index, $count)"
           >{{abc}}</a>
         }
@@ -63,7 +63,6 @@ export class InboundDashboard {
   protected  getCssPos(index:number, count:number, elmWidth:number = 64) {
     const knownCss = ["left-[0px]", "left-[15px]","left-[20px]","left-[25px]","left-[30px]","left-[45px]"]
     const pos = { left: `${index > 0 ? (elmWidth - 40) + (index * (count*5)) : 0}px ` };
-    console.log(pos);
     return pos;
   }
 }
