@@ -22,10 +22,10 @@
     "@angular/ssr": "^20.1.0",
     "@tailwindcss/postcss": "^4.1.10",
     "tailwindcss": "^4.1.10",
-    "@ngrx/signals": "^19.2.1",
-    "@ngrx/operators": "^19.2.1",
-    "primeng": "~20.0.0-rc.3",
-    "@primeng/themes": "~20.0.0-rc.3",
+    "@ngrx/signals": "^20.0.0",
+    "@ngrx/operators": "^20.0.0",
+    "primeng": "~20.0.0",
+    "@primeng/themes": "~20.0.0",
     "chart.js": "^4.4.7",
     "quill": "^2.0.3",
     "tailwindcss-primeui": "^0.6.1",
@@ -52,13 +52,5 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.8.2"
-  },
-  "overrides": {
-    "@ngrx/signals": {
-      "@angular/core": "^19.2.8"
-    },
-    "@ngrx/operators": {
-      "@angular/core": "^19.2.8"
-    }
   }
 }
