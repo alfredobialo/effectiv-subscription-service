@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, signal, computed} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
+import sumBy from 'lodash/sumBy';
 @Component({
   selector: 'new-lead, NewLead',
   imports: [CommonModule],
@@ -21,7 +21,7 @@ import {CommonModule} from '@angular/common';
 
           </thead>
           <tbody>
-            @for (d of data; track $index) {
+            @for (d of data(); track $index) {
               <tr>
                 <td>{{ $index + 1 }}</td>
                 <td>{{ d.date | date:'dd-MMM' }}</td>
@@ -29,11 +29,11 @@ import {CommonModule} from '@angular/common';
                 <td>{{ d.cost | currency:'NGN ' }}</td>
               </tr>
             }
-          <tr>
+          <tr class="dark:bg-primary-700 font-extrabold text-[1.3rem]">
             <td></td>
             <td>Total</td>
-            <td>{{sumQty }}</td>
-            <td>{{sumCost | currency: 'NGN '}}</td>
+            <td>{{sumQty() }}</td>
+            <td>{{sumCost() | currency: 'NGN '}}</td>
           </tr>
           </tbody>
         </table>
@@ -46,11 +46,11 @@ import {CommonModule} from '@angular/common';
   styles: ``
 })
 export class NewLead {
-  data = [
+  data = signal([
     {
       date: new Date(2024, 9, 29),
-      qty: 6,
-      cost: 120
+      qty: 8,
+      cost: 1200
     },
     {
       date: new Date(2024, 10, 20),
@@ -61,19 +61,37 @@ export class NewLead {
       date: new Date(2024, 11, 24),
       qty: 19,
       cost: 380
-    }
-  ];
+    },
+    {
+      date: new Date(2024, 7, 12),
+      qty: 13,
+      cost: 1880
+    },
+    {
+      date: new Date(2024, 6, 16),
+      qty: 79,
+      cost: 4301
+    },
+    {
+      date: new Date(2024, 10, 13),
+      qty: 29,
+      cost: 1420
+    },
+    {
+      date: new Date(2024, 10, 4),
+      qty: 13,
+      cost: 670
+    },
+  ]);
 
-  sumQty = 0;
-  sumCost = 0;
-  calculateSumQty() {
-    for (let i = 0; i < this.data.length; i++) {
-      this.sumQty += this.data[i].qty;
-      this.sumCost += this.data[i].cost;
-    }
-  }
-  ngOnInit() {
-    this.calculateSumQty()
-  }
+  sumQty = computed(() => {
+    return sumBy(this.data(),(x) => x.qty);
+  });
+  sumCost = computed(() => {
+    return sumBy(this.data(),(x) => x.cost);
+  });
+
+
+
 }
 
