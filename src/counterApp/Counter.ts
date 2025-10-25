@@ -10,7 +10,8 @@ import {ButtonModule} from 'primeng/button';
   imports:[ButtonModule, RippleModule],
   selector: 'Counter',
   template: `
-    <div class="rounded-lg dark:bg-surface-700 bg-yellow-100 shadow min-h-28 md:w-[300px] p-4">
+    <div class="rounded-lg dark:bg-surface-800 ring-2 dark:ring-surface-500 dark:hover:bg-surface-700 hover:bg-yellow-400 duration-300
+    ring-surface-300 mt-3 bg-yellow-600 shadow min-h-28 md:w-[300px] p-4">
       <h1 class="text-2xl text-center text-shadow-stone-600">Counter App</h1>
       <div class="flex flex-col justify-between ">
         <p class=" text-6xl text-center text-pink-700 dark:text-white/90 text-shadow-2xs" [class]="counterAnimation()">{{ counter() }}</p>
