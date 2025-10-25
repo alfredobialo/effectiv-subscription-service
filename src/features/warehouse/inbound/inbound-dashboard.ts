@@ -12,7 +12,7 @@ import {CommonModule} from '@angular/common';
 
     <div class="">
       @for(w of inboundList; track  w.warehouseId) {
-        <div class="rounded-lg p-4 mb-3 dark:bg-surface-700 shadow-2xs bg-primary-200 h-32">
+        <div class="rounded-lg p-4 mb-3 dark:bg-surface-900 shadow-2xs bg-primary-200 h-32">
           <span>Warehouse Name </span>
           <span class="font-bold">{{ w.warehouseName }}</span>
           <p class="">Total Inbound: <span>{{w.inbound | number}}</span></p>
