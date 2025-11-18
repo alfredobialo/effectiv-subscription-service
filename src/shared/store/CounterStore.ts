@@ -6,7 +6,7 @@ type initialCounterState = {
 }
 const initCounter: initialCounterState = {counter: 0};
 export const CounterStore = signalStore(
-  {providedIn: "root"},
+
   withState(initCounter),
   withComputed(store => {
     return {
