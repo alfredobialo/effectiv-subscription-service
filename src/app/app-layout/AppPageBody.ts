@@ -15,7 +15,7 @@ import {RouterOutlet} from '@angular/router';
     RouterOutlet
   ],
   template: `
-    <div class="h-full    rounded-2xl">
+    <div class="h-full py-4 px-4 dark:bg-surface-900 bg-surface-50  rounded-2xl">
       <router-outlet></router-outlet>
     </div>
   `

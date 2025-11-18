@@ -17,7 +17,7 @@ import {MenuStateService} from './app-layout/MenuStateService';
   template: `
     <div class=" flex min-h-screen ">
       <AppNavBar />
-      <div class="  px-3 grow-1  duration-300" [class]="{'ms-[60px]': menuState.showMenu()}"
+      <div class="    grow-1  duration-300" [class]="{'ms-[60px]': menuState.showMenu()}"
            [class]="{'md:ms-[85px]': menuState.showMenu()}">
         <AppUserNavbar />
         <AppPageBody />
