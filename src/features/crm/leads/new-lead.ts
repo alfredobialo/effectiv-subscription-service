@@ -1,9 +1,11 @@
 import {Component, signal, computed} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import sumBy from 'lodash/sumBy';
+import {ButtonDirective} from 'primeng/button';
+import {Ripple} from 'primeng/ripple';
 @Component({
   selector: 'new-lead, NewLead',
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonDirective, Ripple],
   template: `
     <div>
       <h1>
@@ -17,6 +19,7 @@ import sumBy from 'lodash/sumBy';
             <th class="w-[200px]"></th>
             <th class="w-[200px]">All</th>
             <th class="w-[200px]">Revenue</th>
+            <th ></th>
           </tr>
 
           </thead>
@@ -27,6 +30,7 @@ import sumBy from 'lodash/sumBy';
                 <td>{{ d.date | date:'dd-MMM' }}</td>
                 <td>{{ d.qty }}</td>
                 <td>{{ d.cost | currency:'NGN ' }}</td>
+                <td><button class="" (click)="removeItem($index)" pButton pRipple>Delete</button></td>
               </tr>
             }
           <tr class="dark:bg-primary-700 font-extrabold text-[1.3rem]">
@@ -91,7 +95,10 @@ export class NewLead {
     return sumBy(this.data(),(x) => x.cost);
   });
 
+  removeItem = (index: number) => {
+    this.data().splice(index, 1);
+    this.data.set([...this.data()]);
+  }
 
 
 }
-

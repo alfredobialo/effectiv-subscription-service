@@ -1,20 +1,31 @@
-import {Component, computed, inject} from '@angular/core';
-import {AppNavBar} from './sub/appNavBar';
-import {AppUserNavbar} from './sub/appUserNavbar';
-import {AppFooter} from './sub/footer';
-import {AppPageBody} from './sub/AppPageBody';
-import {MenuStateService} from './services/MenuStateService';
+import {Component} from '@angular/core';
+import {CounterWithSignal} from '../counterApp/CounterWithSignal';
+import {BarChart} from '../features/charts/barChart';
+import {Counter} from '../counterApp/Counter';
+import {ManageWarehouses} from '../features/warehouse/config/manage-warehouses';
 
 @Component({
   selector: 'SalesDashboard',
   template: `
-    <div class=" flex min-h-screen ">
-      <AppNavBar />
-      <div class="  px-3 grow-1  duration-300" [class]="{'ms-[60px]': menuState.showMenu()}"
-           [class]="{'md:ms-[85px]': menuState.showMenu()}">
-        <AppUserNavbar />
-        <AppPageBody />
-        <AppFooter />
+    <div class="xl:px-4 mt-3 xl:mt-6 ">
+      <h1 class="">Sales App</h1>
+      <div class="flex ">
+        <div class="flex-grow-1 p-4">
+          <ManageWarehouses />
+          <div class="mt-20 ">
+            <CounterWithSignal />
+          </div>
+        </div>
+        <div class="p-4">
+          <BarChart />
+          <div class="mt-6 flex justify-between">
+            <Counter />
+            <Counter />
+
+          </div>
+        </div>
+
+
 
       </div>
     </div>
@@ -22,16 +33,12 @@ import {MenuStateService} from './services/MenuStateService';
   `,
   standalone: true,
   imports: [
-    AppNavBar, AppUserNavbar, AppFooter, AppPageBody
+    CounterWithSignal,
+    BarChart,
+    Counter,
+    ManageWarehouses
   ]
 })
 export class SalesDashboard {
-  constructor( public menuState: MenuStateService) {
-   /* menuState = inject(MenuStateService);*/
-
-  }
-  expand = computed(() => {
-    return this.menuState.showMenu();
-  });
 
 }

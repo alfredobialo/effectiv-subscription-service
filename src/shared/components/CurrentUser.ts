@@ -1,5 +1,5 @@
 import {Component, inject, output} from '@angular/core';
-import {MenuStateService} from '../../sales-app/services/MenuStateService';
+import {MenuStateService} from '../../app/app-layout/MenuStateService';
 
 @Component({
   standalone: true,

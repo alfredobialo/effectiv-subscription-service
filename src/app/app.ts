@@ -1,16 +1,37 @@
-import {Component} from '@angular/core';
-import {SalesDashboard} from '../sales-app/salesDashboard';
+import {Component, computed, inject} from '@angular/core';
+import {AppFooter} from './app-layout/footer';
+import {AppNavBar} from './app-layout/appNavBar';
+import {AppPageBody} from './app-layout/AppPageBody';
+import {AppUserNavbar} from './app-layout/appUserNavbar';
+import {MenuStateService} from './app-layout/MenuStateService';
 
 @Component({
   selector: 'App',
   imports: [
-    SalesDashboard,
+    AppFooter,
+    AppNavBar,
+    AppPageBody,
+    AppUserNavbar,
 
   ],
   template: `
-    <SalesDashboard />
+    <div class=" flex min-h-screen ">
+      <AppNavBar />
+      <div class="  px-3 grow-1  duration-300" [class]="{'ms-[60px]': menuState.showMenu()}"
+           [class]="{'md:ms-[85px]': menuState.showMenu()}">
+        <AppUserNavbar />
+        <AppPageBody />
+        <AppFooter />
+
+      </div>
+    </div>
   `
 })
 export class App {
+  public menuState = inject(MenuStateService);
+  expand = computed(() => {
+    return this.menuState.showMenu();
+  });
+
 
 }

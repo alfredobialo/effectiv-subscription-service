@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {MenuStateService} from '../services/MenuStateService';
+import {MenuStateService} from './MenuStateService';
 import {AppLogo} from './AppLogo';
 import {NavMenu} from './NavMenu';
 import {SignOut} from './SignOut';
@@ -21,11 +21,11 @@ import {SignOut} from './SignOut';
         <div class="flex flex-col items-center">
           <AppLogo />
 
-          <NavMenu isActive="true" iconClass="las la-phone-volume" />
-          <NavMenu iconClass="las la-piggy-bank" />
-          <NavMenu iconClass="las la-chart-pie"/>
+          <NavMenu routerLink="dashboard" iconClass="las la-phone-volume" />
+          <NavMenu routerLink="sales-dashboard" iconClass="las la-piggy-bank" />
+<!--          <NavMenu iconClass="las la-chart-pie"/>
           <NavMenu iconClass="las la-user-lock"/>
-          <NavMenu iconClass="las la-tools"/>
+          <NavMenu iconClass="las la-tools"/>-->
 
         </div>
 
