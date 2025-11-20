@@ -19,8 +19,8 @@ import {MenuStateService} from './app-layout/MenuStateService';
       <AppNavBar />
       <div class="    grow-1  duration-300" [class]="{'ms-[60px]': menuState.showMenu()}"
            [class]="{'md:ms-[85px]': menuState.showMenu()}">
-        <AppUserNavbar />
-        <AppPageBody />
+        <AppUserNavbar [pageTitle]="pageTitle"/>
+        <AppPageBody (onPageTitleSet)="setPageTitle($event)" />
         <AppFooter />
 
       </div>
@@ -32,6 +32,10 @@ export class App {
   expand = computed(() => {
     return this.menuState.showMenu();
   });
+  protected pageTitle: string ="";
 
 
+  protected setPageTitle($event: string) {
+    this.pageTitle = $event;
+  }
 }

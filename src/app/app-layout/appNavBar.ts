@@ -1,8 +1,9 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {MenuStateService} from './MenuStateService';
 import {AppLogo} from './AppLogo';
 import {NavMenu} from './NavMenu';
 import {SignOut} from './SignOut';
+import AppMenuHelper, {IAppMenu} from '../../shared/model/menu/appMenu';
 
 @Component({
   selector: 'AppNavBar, app-navbar, app-nav-bar, appNavBar',
@@ -20,12 +21,11 @@ import {SignOut} from './SignOut';
         me-2 p-3 fixed top-0 bottom-0 left-0">
         <div class="flex flex-col items-center">
           <AppLogo />
-
-          <NavMenu routerLink="dashboard" iconClass="las la-phone-volume" />
-          <NavMenu routerLink="sales-dashboard" iconClass="las la-piggy-bank" />
-          <NavMenu iconClass="las la-chart-pie" />
-          <NavMenu iconClass="las la-user-lock" />
-          <NavMenu iconClass="las la-tools" />
+          @for(m of appMenus(); track $index){
+            @if(m.isActive){
+              <NavMenu [routerLink]="m.routePath" [title]="m.title" iconClass="las {{m.iconClass}}" />
+            }
+          }
 
         </div>
 
@@ -37,4 +37,5 @@ import {SignOut} from './SignOut';
 })
 export class AppNavBar {
   menuState = inject(MenuStateService);
+  protected appMenus = signal<IAppMenu[]>(AppMenuHelper.getMenus());
 }

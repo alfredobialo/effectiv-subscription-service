@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {BasePageComponent} from './BasePageComponent';
 
 @Component({
   selector: 'projects-page',
@@ -15,6 +16,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProjectsPage {
+export class ProjectsPage extends BasePageComponent{
+  constructor() {
+    super();
+    this.pageTitle.set("Project Management");
+  }
 
 }

@@ -17,6 +17,27 @@ export const routes: Routes = [
     children : []
   },
   {
+    path: "crm-dashboard",
+    loadComponent: () => import("./pages/crm-dashboard-page")
+      .then(x => x.CrmDashboardPage),
+    title: "Crm Dashboard",
+    children : []
+  },
+  {
+    path: "inventory-dashboard",
+    loadComponent: () => import("./pages/inventory-page")
+      .then(x => x.InventoryPage),
+    title: "Inventory Dashboard",
+    children : []
+  },
+  {
+    path: "project-dashboard",
+    loadComponent: () => import("./pages/projects-page")
+      .then(x => x.ProjectsPage),
+    title: "Project Dashboard",
+    children : []
+  },
+  {
     path:"",
     redirectTo: "dashboard",
     pathMatch: "full",

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {BasePageComponent} from './BasePageComponent';
 
 @Component({
   selector: 'crm-dashboard-page',
@@ -15,6 +16,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CrmDashboardPage {
-
+export class CrmDashboardPage extends BasePageComponent{
+  constructor() {
+    super();
+    this.pageTitle.set("Customer Relations");
+  }
 }
