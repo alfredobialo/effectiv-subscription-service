@@ -38,6 +38,29 @@ export const routes: Routes = [
     children : []
   },
   {
+    path: "purchase-dashboard",
+    loadComponent: () => import("./pages/purchase-page")
+      .then(x => x.PurchasePage),
+    title: "Purchase Manager Dashboard",
+    children : []
+  },
+  {
+    path: "finance-dashboard",
+    loadComponent: () => import("./pages/finance-page")
+      .then(x => x.FinancePage),
+    title: "CFO Dashboard",
+    children : []
+  },
+  {
+    path: "security-dashboard",
+    loadComponent: () => import("./pages/security-page")
+      .then(x => x.SecurityPage),
+    title: "Application Security Dashboard",
+    children : []
+  },
+
+
+  {
     path:"",
     redirectTo: "dashboard",
     pathMatch: "full",

@@ -25,15 +25,15 @@ class AppMenuHelper {
         component: "sales-page",
         index: 1,
         isActive: true,
-        iconClass: "la-cart-arrow-down"
+        iconClass: "la-cart-plus"
       },
       {
-        title: "Crm Dashboard",
-        routePath: "crm-dashboard",
-        component: "crm-page",
-        index: 2,
+        title: "Purchases Dashboard",
+        routePath: "purchase-dashboard",
+        component: "purchases-page",
         isActive: true,
-        iconClass :"la-users"
+        iconClass : "la-money-check-alt",
+        index: 2
       },
       {
         title: "Inventory Dashboard",
@@ -44,19 +44,28 @@ class AppMenuHelper {
         iconClass : "la-industry"
       },
       {
-        title: "Purchases Dashboard",
-        routePath: "purchase-dashboard",
-        component: "purchases-page",
-        isActive: false,
-        index: 4
-      },
-      {
         title: "Project Dashboard",
         routePath: "project-dashboard",
         component: "projects-page",
-        index: 5,
+        index: 4,
         isActive: true,
         iconClass : "la-suitcase"
+      },
+      {
+        title: "Financial Accounting",
+        routePath: "finance-dashboard",
+        component: "finance-page",
+        index:5,
+        isActive: true,
+        iconClass : "la-balance-scale-left"
+      },
+      {
+        title: "App Security Manager",
+        routePath: "security-dashboard",
+        component: "security-page",
+        index:6,
+        isActive: true,
+        iconClass : "la-key"
       },
     ];
   }
