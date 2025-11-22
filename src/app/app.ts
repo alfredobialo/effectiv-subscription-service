@@ -4,6 +4,8 @@ import {AppNavBar} from './app-layout/appNavBar';
 import {AppPageBody} from './app-layout/AppPageBody';
 import {AppUserNavbar} from './app-layout/appUserNavbar';
 import {MenuStateService} from './app-layout/MenuStateService';
+import {Router} from '@angular/router';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'App',
@@ -19,7 +21,7 @@ import {MenuStateService} from './app-layout/MenuStateService';
       <AppNavBar />
       <div class="    grow-1  duration-300" [class]="{'ms-[60px]': menuState.showMenu()}"
            [class]="{'md:ms-[85px]': menuState.showMenu()}">
-        <AppUserNavbar [pageTitle]="pageTitle"/>
+        <AppUserNavbar [pageTitle]="pageTitle" />
         <AppPageBody (onPageTitleSet)="setPageTitle($event)" />
         <AppFooter />
 
@@ -28,14 +30,22 @@ import {MenuStateService} from './app-layout/MenuStateService';
   `
 })
 export class App {
+  router = inject(Router)
   public menuState = inject(MenuStateService);
+
+  constructor() {
+    this.router.events.pipe(takeUntilDestroyed()).subscribe( event => {
+      console.log("ROUTER EVENT", event);
+    });
+  }
+
   expand = computed(() => {
     return this.menuState.showMenu();
   });
   protected pageTitle: string ="";
 
 
-  protected setPageTitle($event: string) {
-    this.pageTitle = $event;
+  protected setPageTitle(title: string) {
+    this.pageTitle = title;
   }
 }

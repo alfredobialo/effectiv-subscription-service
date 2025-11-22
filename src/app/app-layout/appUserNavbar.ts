@@ -20,7 +20,7 @@ import {AppNotification} from './AppNotification';
         <ContextSearch />
       </div>
       <div class="min-w-[200px] flex justify-evenly items-center">
-        <AppNotification beep="3"  />
+        <AppNotification beep="5"  />
         <CurrentUserInfo />
       </div>
     </div>

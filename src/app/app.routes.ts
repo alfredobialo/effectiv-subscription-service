@@ -56,7 +56,11 @@ export const routes: Routes = [
     loadComponent: () => import("./pages/security-page")
       .then(x => x.SecurityPage),
     title: "Application Security Dashboard",
-    children : []
+    children : [],
+    canActivate : [ (activeRouteInfo, routerState) => {
+      console.log("ROUTER CAN ACTIVATE Guard", activeRouteInfo, routerState);
+      return true;
+    }]
   },
 
 
