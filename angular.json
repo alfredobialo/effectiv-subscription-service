@@ -14,8 +14,7 @@
           "changeDetection": "OnPush",
           "prefix": "",
           "skipTests": true,
-          "style": "none",
-          "displayBlock": true
+          "style": "none"
         },
         "@schematics/angular:interceptor": {
           "functional": true,

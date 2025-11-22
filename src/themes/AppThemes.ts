@@ -300,3 +300,201 @@ export const OliveTheme =  definePreset(Aura , {
     }
   }
 });
+export const OxbludTheme = definePreset(Aura , {
+  "primitive": {
+    "borderRadius": {
+      "none": "0",
+      "xs": "3px",
+      "sm": "5px",
+      "md": "7px",
+      "lg": "11px",
+      "xl": "16px"
+    }
+  },
+  "semantic": {
+    "primary": {
+      "50": "#fbf3f3",
+      "100": "#e9c5c5",
+      "200": "#d89797",
+      "300": "#c76969",
+      "400": "#b63b3b",
+      "500": "#a50d0d",
+      "600": "#8c0b0b",
+      "700": "#730909",
+      "800": "#5b0707",
+      "900": "#420505",
+      "950": "#290303"
+    },
+    "formField": {
+      "paddingX": "0.85rem",
+      "paddingY": "0.5rem",
+      "sm": {
+        "fontSize": "0.875rem",
+        "paddingX": "0.625rem",
+        "paddingY": "0.375rem"
+      },
+      "lg": {
+        "fontSize": "1.125rem",
+        "paddingX": "0.995rem",
+        "paddingY": "0.625rem"
+      }
+    },
+    "list": {
+      "padding": "0.25rem 0.375rem",
+      "gap": "2px",
+      "header": {
+        "padding": "0.5rem 1rem 0.25rem 1rem"
+      },
+      "option": {
+        "padding": "0.5rem 0.75rem"
+      },
+      "optionGroup": {
+        "padding": "0.5rem 0.75rem"
+      }
+    },
+    "navigation": {
+      "list": {
+        "padding": "0.25rem 0.375rem"
+      },
+      "item": {
+        "padding": "0.5rem 0.75rem",
+        "borderRadius": "{border.radius.sm}"
+      },
+      "submenuLabel": {
+        "padding": "0.5rem 0.75rem"
+      }
+    },
+    "overlay": {
+      "select": {
+        "borderRadius": "{border.radius.md}",
+        "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)"
+      }
+    },
+    "colorScheme": {
+      "light": {
+        "surface": {
+          "0": "#ffffff",
+          "50": "#f6f5f5",
+          "100": "#d5cece",
+          "200": "#b5a7a7",
+          "300": "#948181",
+          "400": "#735a5a",
+          "500": "#523333",
+          "600": "#462b2b",
+          "700": "#392424",
+          "800": "#2d1c1c",
+          "900": "#211414",
+          "950": "#150d0d"
+        }
+      },
+      "dark": {
+        "surface": {
+          "0": "#ffffff",
+          "50": "#f5f4f4",
+          "100": "#d1caca",
+          "200": "#aca0a0",
+          "300": "#877777",
+          "400": "#634d4d",
+          "500": "#3e2323",
+          "600": "#351e1e",
+          "700": "#2b1919",
+          "800": "#221313",
+          "900": "#190e0e",
+          "950": "#100909"
+        }
+      }
+    }
+  }
+});
+
+export const PeppleTheme = definePreset(Aura , {
+  "semantic": {
+    "primary": {
+      "50": "#f7f5fb",
+      "100": "#d9cdea",
+      "200": "#baa5da",
+      "300": "#9c7dca",
+      "400": "#7d55b9",
+      "500": "#5f2da9",
+      "600": "#512690",
+      "700": "#431f76",
+      "800": "#34195d",
+      "900": "#261244",
+      "950": "#180b2a"
+    },
+    "formField": {
+      "paddingX": "0.75rem",
+      "paddingY": "0.5rem",
+      "sm": {
+        "fontSize": "0.875rem",
+        "paddingX": "0.625rem",
+        "paddingY": "0.375rem"
+      },
+      "lg": {
+        "fontSize": "1.125rem",
+        "paddingX": "0.875rem",
+        "paddingY": "0.625rem"
+      }
+    },
+    "list": {
+      "padding": "0.25rem 0.35rem",
+      "gap": "2px",
+      "header": {
+        "padding": "0.5rem 1rem 0.25rem 1rem"
+      },
+      "option": {
+        "padding": "0.5rem 0.75rem",
+        "borderRadius": "{border.radius.sm}"
+      },
+      "optionGroup": {
+        "padding": "0.5rem 0.75rem",
+        "fontWeight": "600"
+      }
+    },
+    "navigation": {
+      "list": {
+        "padding": "0.25rem 0.35rem"
+      },
+      "item": {
+        "padding": "0.5rem 0.75rem"
+      },
+      "submenuIcon": {
+        "size": "0.875rem"
+      }
+    },
+    "colorScheme": {
+      "light": {
+        "surface": {
+          "0": "#ffffff",
+          "50": "#f6f5f7",
+          "100": "#d2cfd7",
+          "200": "#afa9b8",
+          "300": "#8b8298",
+          "400": "#685c79",
+          "500": "#443659",
+          "600": "#3a2e4c",
+          "700": "#30263e",
+          "800": "#251e31",
+          "900": "#1b1624",
+          "950": "#110e16"
+        }
+      },
+      "dark": {
+        "surface": {
+          "0": "#ffffff",
+          "50": "#f6f5f6",
+          "100": "#d3cfd5",
+          "200": "#b0a9b3",
+          "300": "#8d8292",
+          "400": "#6a5c70",
+          "500": "#47364f",
+          "600": "#3c2e43",
+          "700": "#322637",
+          "800": "#271e2b",
+          "900": "#1c1620",
+          "950": "#120e14"
+        }
+      }
+    }
+  }
+});

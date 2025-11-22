@@ -1,4 +1,4 @@
-import {MinyHomeTheme, ZaraTheme, PumkinTheme, GrayMoreTheme, EffectivTheme, OliveTheme} from './AppThemes';
+import {MinyHomeTheme, ZaraTheme, PumkinTheme, GrayMoreTheme, EffectivTheme, OliveTheme, OxbludTheme, PeppleTheme} from './AppThemes';
 
 
 export interface IChangeThemeModel {
@@ -22,8 +22,17 @@ export const AllThemes : IChangeThemeModel[] = [
   },{
     themeName : "Effectiv Theme",
     themePreset : EffectivTheme,
-  },{
+  },
+  {
     themeName : "Olive Theme",
     themePreset : OliveTheme,
+  },
+  {
+    themeName : "Oxblud Theme",
+    themePreset : OxbludTheme,
+  },
+  {
+    themeName : "Pepple Theme",
+    themePreset : PeppleTheme,
   },
 ];

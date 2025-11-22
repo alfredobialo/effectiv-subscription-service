@@ -61,8 +61,8 @@ import {ButtonModule} from 'primeng/button';
           opacity: 1;
         }
      }
-  `,
-  providers : [CounterStore]
+  `/*,
+  providers : [CounterStore]*/
 })
 export class Counter {
   private counterStore = inject(CounterStore);

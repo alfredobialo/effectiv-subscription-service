@@ -1,14 +1,12 @@
 import {Component} from '@angular/core';
 import {CounterWithSignal} from '../counterApp/CounterWithSignal';
-import {BarChart} from '../features/charts/barChart';
 import {Counter} from '../counterApp/Counter';
 import {ManageWarehouses} from '../features/warehouse/config/manage-warehouses';
 
 @Component({
   selector: 'SalesDashboard',
   template: `
-    <div class="xl:px-4 mt-3 xl:mt-6 ">
-      <h1 class="">Sales App</h1>
+    <div class="">
       <div class="flex ">
         <div class="flex-grow-1 p-4">
           <ManageWarehouses />
@@ -17,16 +15,12 @@ import {ManageWarehouses} from '../features/warehouse/config/manage-warehouses';
           </div>
         </div>
         <div class="p-4">
-          <BarChart />
-          <div class="mt-6 flex justify-between">
+          <div class="mt-6 flex flex-col max-h-max justify-between">
             <Counter />
             <Counter />
 
           </div>
         </div>
-
-
-
       </div>
     </div>
 
@@ -34,7 +28,6 @@ import {ManageWarehouses} from '../features/warehouse/config/manage-warehouses';
   standalone: true,
   imports: [
     CounterWithSignal,
-    BarChart,
     Counter,
     ManageWarehouses
   ]

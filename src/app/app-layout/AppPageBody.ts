@@ -1,12 +1,5 @@
-import {Component} from '@angular/core';
-import {Counter} from '../../counterApp/Counter';
-import {ManageWarehouses} from '../../features/warehouse/config/manage-warehouses';
-import {InboundDashboard} from '../../features/warehouse/inbound/inbound-dashboard';
-import {Carousel} from '../../shared/components/carousel/carousel';
-import {NewLead} from '../../features/crm/leads/new-lead';
-import {BarChart} from '../../features/charts/barChart';
-import {CounterWithSignal} from '../../counterApp/CounterWithSignal';
-import {RouterOutlet} from '@angular/router';
+import {Component, output} from '@angular/core';
+import { RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'AppPageBody',
@@ -15,10 +8,18 @@ import {RouterOutlet} from '@angular/router';
     RouterOutlet
   ],
   template: `
-    <div class="h-full    rounded-2xl">
-      <router-outlet></router-outlet>
+    <div class="h-full py-4 px-4 dark:bg-surface-900 bg-surface-50  rounded-2xl">
+      <router-outlet (activate)="onRouteActivated($event)"></router-outlet>
     </div>
   `
 })
 export class AppPageBody {
+  onPageTitleSet = output<string>();
+  protected onRouteActivated($event: any) {
+    let title:string = "";
+    if($event.pageTitle) {
+      title  = $event?.pageTitle() ?? "";
+    }
+    this.onPageTitleSet.emit(title);
+  }
 }
