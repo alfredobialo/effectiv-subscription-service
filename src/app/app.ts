@@ -35,7 +35,7 @@ export class App {
 
   constructor() {
     this.router.events.pipe(takeUntilDestroyed()).subscribe( event => {
-      console.log("ROUTER EVENT", event);
+      //console.log("ROUTER EVENT", event);
     });
   }
 
