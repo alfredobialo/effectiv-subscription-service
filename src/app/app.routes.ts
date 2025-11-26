@@ -1,5 +1,6 @@
 import {Routes} from '@angular/router';
 import {PageNotFound} from './pages/page-not-found';
+import {salesRoutes} from '../sales-app/sales-routes';
 
 export const routes: Routes = [
   {
@@ -14,7 +15,7 @@ export const routes: Routes = [
     loadComponent: () => import("./pages/sales-page")
       .then(x => x.SalesPage),
     title: "Sales Dashboard",
-    children : []
+    children : salesRoutes
   },
   {
     path: "crm-dashboard",

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'new-customer-list',
+  selector: 'customer-list',
   imports: [],
   template: `
     <p>
@@ -11,6 +11,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NewCustomerList {
+export class CustomerList {
 
 }

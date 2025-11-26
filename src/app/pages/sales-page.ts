@@ -1,11 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {SalesDashboard} from "../../sales-app/salesDashboard";
 import {BasePageComponent} from './BasePageComponent';
+import {RouterOutlet} from '@angular/router';
+import {salesRoutes} from '../../sales-app/sales-routes';
 @Component({
   selector: 'sales-page',
-  imports: [SalesDashboard],
+  imports: [SalesDashboard, RouterOutlet],
   template: `
     <SalesDashboard />
+    <router-outlet></router-outlet>
   `,
   styles: `
     :host {
@@ -19,4 +22,6 @@ export class SalesPage extends BasePageComponent {
     super();
     this.pageTitle.set("Sales Analytics");
   }
+
+  protected readonly salesRoutesInfo = salesRoutes;
 }

@@ -22,7 +22,7 @@ import AppMenuHelper, {IAppMenu} from '../../shared/model/menu/appMenu';
         <div class="flex flex-col items-center">
           <AppLogo />
           @for(m of appMenus(); track $index){
-            @if(m.isActive){
+            @if(m.isEnabled){
               <NavMenu [routerLink]="m.routePath" [title]="m.title" iconClass="las {{m.iconClass}}" />
             }
           }
