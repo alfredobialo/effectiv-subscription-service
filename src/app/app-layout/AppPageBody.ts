@@ -1,8 +1,6 @@
 import {Component, inject, output} from '@angular/core';
 import {Route, Router,  RouterOutlet} from '@angular/router';
-import {salesRoutes} from '../../sales-app/sales-routes';
 import AppMenuHelper, {IAppMenu} from '../../shared/model/menu/appMenu';
-import AppMenu from '../../shared/model/menu/appMenu';
 
 @Component({
   selector: 'AppPageBody',
@@ -12,7 +10,7 @@ import AppMenu from '../../shared/model/menu/appMenu';
   ],
   template: `
     <div class="h-full dark:bg-surface-900 bg-surface-50  rounded-2xl flex ">
-      <div class=" dark:bg-surface-600 bg-surface-200 py-4 px-3 min-w-[200px] lg:min-w-[220px] 2xl:min-w-[280px]">
+      <div class="duration-500 hidden xl:block dark:bg-surface-600 bg-surface-200 py-4 px-3 min-w-[200px] lg:min-w-[220px] 2xl:min-w-[280px]">
 
         <div class="sticky top-[95px]">
           <p class="font-bold mb-6">Left Nav Submenu</p>

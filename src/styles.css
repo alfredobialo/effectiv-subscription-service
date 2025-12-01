@@ -29,3 +29,9 @@ a.nav-menu-active{
 h1{
   @apply leading-tight text-2xl lg:text-4xl;
 }
+/*
+.effectiv-button{
+  @apply xl:size-[48px] size-[45px] 2xl:size-[50px] flex justify-center item-center rounded-full hover:bg-surface-300/20
+  dark:hover:bg-white/20 duration-200 cursor-pointer dark:text-primary-400 text-primary-600  relative ;
+}
+*/
