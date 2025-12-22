@@ -9,6 +9,9 @@ import {BasePageComponent} from './BasePageComponent';
     <p class="text-xl p-3">
      Welcome back
     </p>
+    <div>
+
+    </div>
   `,
   styles: `
     :host {
