@@ -20,20 +20,21 @@
     "@angular/platform-server": "^20.3.4",
     "@angular/router": "^20.3.4",
     "@angular/ssr": "^20.3.5",
+    "@microsoft/signalr": "^8.0.7",
     "@netlify/angular-runtime": "^3.0.1",
-    "@ngrx/operators": "^20.1.0",
-    "@ngrx/signals": "^20.1.0",
+    "@ngrx/operators": "^21.0.0",
+    "@ngrx/signals": "^21.0.0",
     "@primeng/themes": "~20.2.0",
+    "@primeuix/themes": "^2.0.2",
     "@tailwindcss/postcss": "^4.1.10",
-    "express": "^5.1.0",
     "chart.js": "^4.4.7",
+    "express": "^5.1.0",
     "lodash": "^4.17.21",
     "luxon": "^3.5.0",
-    "@microsoft/signalr": "^8.0.7",
-    "quill": "^2.0.3",
     "openid-client": "^6.1.7",
     "postcss": "^8.5.4",
     "primeng": "~20.3.0",
+    "quill": "^2.0.3",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.14",
     "tailwindcss-primeui": "^0.6.1",
@@ -41,9 +42,9 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "^20.3.5",
-    "@angular/cli": "^20.3.5",
-    "@angular/compiler-cli": "^20.3.4",
+    "@angular/build": "^21.0.4",
+    "@angular/cli": "^21.0.4",
+    "@angular/compiler-cli": "^21.0.6",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/lodash": "^4.17.20",
@@ -54,9 +55,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.5.3",
     "typescript": "~5.8.2"
   },
-  "overrides": {
-
-  }
+  "overrides": {}
 }
