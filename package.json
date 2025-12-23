@@ -11,15 +11,15 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^20.3.4",
-    "@angular/common": "^20.3.4",
-    "@angular/compiler": "^20.3.4",
-    "@angular/core": "^20.3.4",
-    "@angular/forms": "^20.3.4",
-    "@angular/platform-browser": "^20.3.4",
-    "@angular/platform-server": "^20.3.4",
-    "@angular/router": "^20.3.4",
-    "@angular/ssr": "^20.3.5",
+    "@angular/animations": "^21.0.6",
+    "@angular/common": "^21.0.6",
+    "@angular/compiler": "^21.0.6",
+    "@angular/core": "^21.0.6",
+    "@angular/forms": "^21.0.6",
+    "@angular/platform-browser": "^21.0.6",
+    "@angular/platform-server": "^21.0.6",
+    "@angular/router": "^21.0.6",
+    "@angular/ssr": "^21.0.4",
     "@microsoft/signalr": "^8.0.7",
     "@netlify/angular-runtime": "^3.0.1",
     "@ngrx/operators": "^21.0.0",
@@ -33,7 +33,7 @@
     "luxon": "^3.5.0",
     "openid-client": "^6.1.7",
     "postcss": "^8.5.4",
-    "primeng": "~20.3.0",
+    "primeng": "~21.0.2",
     "quill": "^2.0.3",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.14",
@@ -56,7 +56,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.5.3",
-    "typescript": "~5.8.2"
+    "typescript": "~5.9.3"
   },
   "overrides": {}
 }
