@@ -29,7 +29,8 @@ class AppMenuHelper {
         component: "sales-page",
         index: 1,
         isEnabled: true,
-        iconClass: "la-cart-plus"
+        iconClass: "la-cart-plus",
+        submenu : []
       },
       {
         title: "Purchases Dashboard",

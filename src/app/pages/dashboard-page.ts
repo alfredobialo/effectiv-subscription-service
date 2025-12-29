@@ -6,12 +6,18 @@ import {BasePageComponent} from './BasePageComponent';
   selector: 'dashboard-page',
   imports: [],
   template: `
-    <p class="text-xl p-3">
-     Welcome back
-    </p>
-    <div>
+    <div class="flex justify-between">
+      <div class="flex-1">
+        <p class="text-2xl p-3 text-primary-500">
+          Welcome back
+        </p>
+      </div>
 
+      <div class="call-to-action">
+        <h1>We are here Again</h1>
+      </div>
     </div>
+
   `,
   styles: `
     :host {

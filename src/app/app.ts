@@ -1,4 +1,4 @@
-import {Component, computed, inject} from '@angular/core';
+import {Component, computed, inject, afterNextRender} from '@angular/core';
 import {AppFooter} from './app-layout/footer';
 import {AppNavBar} from './app-layout/appNavBar';
 import {AppPageBody} from './app-layout/AppPageBody';
@@ -6,6 +6,7 @@ import {AppUserNavbar} from './app-layout/appUserNavbar';
 import {MenuStateService} from './app-layout/MenuStateService';
 import {Router} from '@angular/router';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import {applyTheme, DEFAULT_THEME_KEY} from '../themes/ChangeThemeModel';
 
 @Component({
   selector: 'App',
@@ -34,6 +35,13 @@ export class App {
   public menuState = inject(MenuStateService);
 
   constructor() {
+    afterNextRender(() => {
+      const themeSetting = localStorage.getItem(DEFAULT_THEME_KEY);
+      if(themeSetting) {
+          applyTheme(themeSetting);
+      }
+      console.log("LocalStorage Settings",themeSetting);
+    })
     this.router.events.pipe(takeUntilDestroyed()).subscribe( event => {
       //console.log("ROUTER EVENT", event);
     });

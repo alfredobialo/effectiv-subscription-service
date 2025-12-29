@@ -1,6 +1,16 @@
-import {MinyHomeTheme, ZaraTheme, PumkinTheme, GrayMoreTheme, EffectivTheme, OliveTheme, OxbludTheme, PeppleTheme} from './AppThemes';
-
-
+import {
+  MinyHomeTheme,
+  ZaraTheme,
+  PumkinTheme,
+  GrayMoreTheme,
+  EffectivTheme,
+  OliveTheme,
+  OxbludTheme,
+  PeppleTheme,
+  AlvanaTheme
+} from './AppThemes';
+import {usePreset} from '@primeng/themes';
+export const DEFAULT_THEME_KEY = "es.user.theme";
 export interface IChangeThemeModel {
   themePreset: any;
   themeName: string
@@ -35,4 +45,28 @@ export const AllThemes : IChangeThemeModel[] = [
     themeName : "Pepple Theme",
     themePreset : PeppleTheme,
   },
+  {
+    themeName : "Alvana Theme",
+    themePreset : AlvanaTheme,
+  },
 ];
+export const DEFAULT_THEME = AllThemes[7]; // OxBlud as Default
+export function getTheme(themeName: string) {
+  let theme = AllThemes.find((x) => {
+    return x.themeName === themeName;
+  });
+  if(theme === undefined){
+    theme = DEFAULT_THEME;
+  }
+  return theme;
+}
+
+export function saveTheme(themeName: string) {
+  const theme= getTheme(themeName);
+  localStorage.setItem(DEFAULT_THEME_KEY,themeName);
+}
+
+export function applyTheme(themeName: string) {
+  const theme = getTheme(themeName);
+  usePreset(theme.themePreset);
+}

@@ -24,7 +24,7 @@
 }
 
 a.nav-menu-active{
-  @apply dark:bg-primary-800 bg-primary-400 text-white ring-primary-800 dark:ring-primary-400 ring-4;
+  @apply dark:bg-primary-800 bg-primary-400 text-white ring-primary-200 dark:ring-primary-400 ring-4;
 }
 h1{
   @apply leading-tight text-2xl lg:text-4xl;
@@ -35,3 +35,18 @@ h1{
   dark:hover:bg-white/20 duration-200 cursor-pointer dark:text-primary-400 text-primary-600  relative ;
 }
 */
+.call-to-action, .attention-container {
+  @apply text-primary-600 dark:text-primary-200
+  text-shadow-2xs
+  bg-gradient-to-br
+  dark:from-primary-500 from-primary-100
+  dark:to-primary-900 to-primary-300
+  w-[300px] min-h-[100px]
+  tab-l:w-[500px] duration-200 rounded-2xl p-4 lg:p-6
+  2k:w-[700px] 2k:min-h-[200px] ring-4 dark:ring-primary-400 ring-primary-800
+}
+
+.btn-circle, .button-circle {
+  @apply xl:size-[48px] size-[45px] 2xl:size-[50px] flex justify-center items-center rounded-full hover:bg-surface-300/20
+  dark:hover:bg-white/20 duration-200 cursor-pointer dark:text-primary-400 text-primary-800  relative
+}

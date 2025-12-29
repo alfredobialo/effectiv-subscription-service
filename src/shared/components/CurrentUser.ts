@@ -1,24 +1,24 @@
-import {Component, inject, output} from '@angular/core';
+import {Component, inject, output, signal} from '@angular/core';
 import {MenuStateService} from '../../app/app-layout/MenuStateService';
 import {AppNotification} from '../../app/app-layout/AppNotification';
-
+import ThemeSelector from '../../themes/theme-selector';
 @Component({
   standalone: true,
   selector: 'CurrentUserInfo',
   imports: [
-    AppNotification
+    AppNotification,
+    ThemeSelector,
   ],
   template: `
     <div class="flex min-w-xs gap-x-6 justify-end items-center py-2 px-2 md:px-3">
+      <ThemeSelector />
       <AppNotification beep="5" />
-      <button class="xl:size-[48px] size-[45px] 2xl:size-[50px] flex justify-center items-center rounded-full hover:bg-surface-300/20
-  dark:hover:bg-white/20 duration-200 cursor-pointer dark:text-primary-400 text-primary-600  relative "
+      <button class="btn-circle"
               (click)="toggleDarkMode()">
         <i class="las la-2x la-moon"></i>
       </button>
       <button (click)="toggleMenu()"
-              class="xl:size-[48px] size-[45px] 2xl:size-[50px] flex justify-center items-center rounded-full hover:bg-surface-300/20
-  dark:hover:bg-white/20 duration-200 cursor-pointer dark:text-primary-400 text-primary-600  relative xl:hidden">
+              class="btn-circle xl:hidden">
         <i class="la la-bars la-2x"></i>
       </button>
     </div>
@@ -45,4 +45,5 @@ export class CurrentUserInfo {
     document.querySelector("html")
       ?.classList.toggle(darkModeClass);
   }
+
 }

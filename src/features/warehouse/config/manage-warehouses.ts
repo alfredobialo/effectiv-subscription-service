@@ -1,24 +1,25 @@
 import {Component, computed, signal} from '@angular/core';
-import {ButtonModule} from 'primeng/button';
-import {Menu} from 'primeng/menu';
-import {RippleModule} from 'primeng/ripple';
+
 import {componentCreatedAnimation} from '../../../shared/animations/CustomAnimations';
-import {usePreset} from "@primeng/themes";
-import {IChangeThemeModel, AllThemes} from '../../../themes/ChangeThemeModel';
 
 @Component({
   selector: 'ManageWarehouses',
-  imports: [ButtonModule, Menu, RippleModule],
+  imports: [],
   template: `
-    <div>
-      <p>manage-warehouses works!</p>
+    <div class="relative">
+      <h1>manage-warehouses works!</h1>
 
-        <img [src]="mainImg" class="w-[300px] duration-300 transition-all">
+        <img [src]="mainImg" class="w-[300px] duration-300 transition-all"
+             (mousemove)="showMagnifiedImage($event)" (mouseleave)="showZoomedImage.set(false)">
         <br>
-      <div class="">
-        <p-menu #themeMenu [model]="menuThemes()" [popup]="true"></p-menu>
-        <button pButton pRipple (click)="themeMenu.toggle($event)">Theme PrimeNg</button>
-      </div>
+
+      @if(showZoomedImage()){
+        <div   class="zoomed-image hidden xl:block duration-300 absolute left-[400px] top-10 backdrop-blur-2xl shadow-2xl ">
+         <img [src]="mainImg" alt="" class="scale-[200%]">
+        </div>
+      }
+
+
     </div>
 
   `,
@@ -38,20 +39,15 @@ export class ManageWarehouses {
   img1 = "images/munachi-ads-02.png";
   img2 = "images/chioma-iwuh2.jpg";
   mainImg = this.img1;
-  themes = signal<IChangeThemeModel[]>(AllThemes);
-  menuThemes = computed(() => {
-    return this.themes().map(x => ({
-      label: x.themeName,
-      command: () => this.changeTheme(x.themePreset),
-      title: x.themeName
-
-    }));
-  });
 
   swapImages() {
   }
 
-  changeTheme(preset: any) {
-    usePreset(preset);
+
+
+  protected showZoomedImage = signal(false);
+  protected showMagnifiedImage(evt: MouseEvent) {
+    this.showZoomedImage.set(true);
+    const zoomedImage = evt.target as HTMLImageElement;
   }
 }

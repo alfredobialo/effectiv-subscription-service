@@ -2,14 +2,16 @@ import {Component} from '@angular/core';
 import {CounterWithSignal} from '../counterApp/CounterWithSignal';
 import {Counter} from '../counterApp/Counter';
 import {ManageWarehouses} from '../features/warehouse/config/manage-warehouses';
+import ThemeSelector from '../themes/theme-selector';
 
 @Component({
   selector: 'SalesDashboard',
   template: `
     <div class="">
-      <div class="flex ">
+      <div class="2xl:flex ">
         <div class="flex-grow-1 p-4">
           <ManageWarehouses />
+          <ThemeSelector />
           <div class="mt-20 ">
             <CounterWithSignal />
           </div>
@@ -29,7 +31,8 @@ import {ManageWarehouses} from '../features/warehouse/config/manage-warehouses';
   imports: [
     CounterWithSignal,
     Counter,
-    ManageWarehouses
+    ManageWarehouses,
+    ThemeSelector
   ]
 })
 export class SalesDashboard {

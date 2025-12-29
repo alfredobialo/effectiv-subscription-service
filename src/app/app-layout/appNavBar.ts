@@ -16,7 +16,8 @@ import AppMenuHelper, {IAppMenu} from '../../shared/model/menu/appMenu';
   standalone: true,
   template: `
     @if (menuState.showMenu()) {
-      <div class=" w-[60px] duration-500 hidden md:flex  z-20 bg-primary-300 dark:bg-surface-700
+      <div class=" w-[60px] duration-500 hidden md:flex  z-20
+      bg-primary-800 dark:bg-surface-700
         md:w-[85px] flex-col items-center justify-between
         me-2 p-3 2xl:fixed absolute top-0 bottom-0 left-0">
         <div class="flex flex-col items-center">

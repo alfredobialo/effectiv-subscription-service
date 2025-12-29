@@ -5,8 +5,7 @@ import {Component, input, numberAttribute} from '@angular/core';
   host: {
     "[class]" :"{'!text-surface-500':beep() === 0}",
     "tabindex" :"3",
-    "class" :`xl:size-[48px] size-[45px] 2xl:size-[50px] flex justify-center items-center rounded-full hover:bg-surface-300/20
-  dark:hover:bg-white/20 duration-200 cursor-pointer dark:text-primary-400 text-primary-600  relative `
+    "class" :`btn-circle`
   },
   template: `
     <ng-container>

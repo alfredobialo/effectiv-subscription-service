@@ -10,9 +10,7 @@ import {JsonPipe} from '@angular/common';
     <div class="text-2xl">
       Manages Dialogs from Navigated Routes
     </div>
-    <div class="text-green-600 text-shadow-2xs bg-gradient-to-br from-teal-200 to-green-400 w-[300px] h-[300px]
-     tab-l:w-[500px] duration-200 rounded-2xl p-4 lg:p-6
-     2k:w-[700px] 2k:h-[430px]  ring-green-800">
+    <div class="call-to-action">
         <h1>Testing Router Events</h1>
       <div class="">
         <pre>

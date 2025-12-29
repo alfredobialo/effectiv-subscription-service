@@ -6,7 +6,8 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import {providePrimeNG} from 'primeng/config';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {provideHttpClient, withFetch} from '@angular/common/http';
-import {EffectivTheme, MinyHomeTheme} from '../themes/AppThemes';
+import {EffectivTheme, MinyHomeTheme, OxbludTheme} from '../themes/AppThemes';
+import {DEFAULT_THEME} from '../themes/ChangeThemeModel';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -18,7 +19,7 @@ export const appConfig: ApplicationConfig = {
     providePrimeNG({
       ripple: true,
       theme : {
-        preset: MinyHomeTheme,
+        preset: DEFAULT_THEME.themePreset,
         options : {
           darkModeSelector: '.theme'
         }

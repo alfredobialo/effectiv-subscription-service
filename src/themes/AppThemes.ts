@@ -1,5 +1,6 @@
 import {definePreset} from '@primeng/themes';
 import Aura from '@primeng/themes/aura';
+import Material from '@primeng/themes/material';
 export const PumkinTheme = definePreset(Aura, {
 
   "semantic": {
@@ -493,6 +494,64 @@ export const PeppleTheme = definePreset(Aura , {
           "800": "#271e2b",
           "900": "#1c1620",
           "950": "#120e14"
+        }
+      }
+    }
+  }
+});
+
+export const AlvanaTheme = definePreset(Material , {
+  "semantic": {
+    "primary": {
+      "50": "#fefdf3",
+      "100": "#f9f7c6",
+      "200": "#f3f099",
+      "300": "#eeea6b",
+      "400": "#e9e33e",
+      "500": "#e4dd11",
+      "600": "#c2bc0e",
+      "700": "#a09b0c",
+      "800": "#7d7a09",
+      "900": "#5b5807",
+      "950": "#393704"
+    },
+    "colorScheme": {
+      "light": {
+        "focusRing": {
+          "shadow": "0 0 1px 4px {surface.200}"
+        },
+        "surface": {
+          "0": "#ffffff",
+          "50": "#f7f7f5",
+          "100": "#d6d6d1",
+          "200": "#b6b6ac",
+          "300": "#969687",
+          "400": "#767663",
+          "500": "#56563e",
+          "600": "#494935",
+          "700": "#3c3c2b",
+          "800": "#2f2f22",
+          "900": "#222219",
+          "950": "#161610"
+        }
+      },
+      "dark": {
+        "focusRing": {
+          "shadow": "0 0 1px 4px {surface.700}"
+        },
+        "surface": {
+          "0": "#ffffff",
+          "50": "#f6f6f2",
+          "100": "#d2d2c2",
+          "200": "#afae92",
+          "300": "#8c8a62",
+          "400": "#686732",
+          "500": "#454302",
+          "600": "#3b3902",
+          "700": "#302f01",
+          "800": "#262501",
+          "900": "#1c1b01",
+          "950": "#111101"
         }
       }
     }
