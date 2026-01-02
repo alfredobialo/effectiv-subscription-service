@@ -11,9 +11,14 @@ import {
 } from './AppThemes';
 import {usePreset} from '@primeng/themes';
 export const DEFAULT_THEME_KEY = "es.user.theme";
+export const DEFAULT_DARK_KEY = "es.user.dark-mode";
 export interface IChangeThemeModel {
   themePreset: any;
   themeName: string
+}
+export interface UserThemeSetting{
+  themeName: string;
+  isDarkMode: boolean;
 }
 
 export const AllThemes : IChangeThemeModel[] = [
@@ -65,8 +70,32 @@ export function saveTheme(themeName: string) {
   const theme= getTheme(themeName);
   localStorage.setItem(DEFAULT_THEME_KEY,themeName);
 }
+export function saveDarkMode(darkModeClass: string) {
+  console.log("SAVE_DARK_MODE_THEME CALLED", darkModeClass);
+   localStorage.setItem(DEFAULT_DARK_KEY,darkModeClass);
+   const htmlElem = document.querySelector("html");
+   if(darkModeClass === ""){
 
+       htmlElem?.classList.remove("theme");
+   }
+   else{
+     htmlElem?.classList.add("theme");
+   }
+
+}
 export function applyTheme(themeName: string) {
   const theme = getTheme(themeName);
   usePreset(theme.themePreset);
+}
+export function applyDarkModeTheme() {
+  const darkMode = localStorage.getItem(DEFAULT_DARK_KEY) ?? "";
+  const htmlElem = document.querySelector("html");
+  if(darkMode === ""){
+
+    htmlElem?.classList.remove("theme");
+  }
+  else{
+    htmlElem?.classList.add("theme");
+  }
+  console.log("APPLY_DARK_MODE_THEME CALLED", darkMode);
 }

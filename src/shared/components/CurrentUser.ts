@@ -2,6 +2,7 @@ import {Component, inject, output, signal} from '@angular/core';
 import {MenuStateService} from '../../app/app-layout/MenuStateService';
 import {AppNotification} from '../../app/app-layout/AppNotification';
 import ThemeSelector from '../../themes/theme-selector';
+import {saveDarkMode} from '../../themes/ChangeThemeModel';
 @Component({
   standalone: true,
   selector: 'CurrentUserInfo',
@@ -42,8 +43,16 @@ export class CurrentUserInfo {
 
   toggleDarkMode() {
     const darkModeClass= "theme";
-    document.querySelector("html")
-      ?.classList.toggle(darkModeClass);
+    const darkThemeExist  = document.querySelector("html")?.classList.contains(darkModeClass) || false;
+    if(darkThemeExist) {
+      saveDarkMode("");
+    }
+    else{
+      saveDarkMode(darkModeClass);
+    }
+
+
+
   }
 
 }

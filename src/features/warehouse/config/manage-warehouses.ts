@@ -7,18 +7,8 @@ import {componentCreatedAnimation} from '../../../shared/animations/CustomAnimat
   imports: [],
   template: `
     <div class="relative">
-      <h1>manage-warehouses works!</h1>
-
-        <img [src]="mainImg" class="w-[300px] duration-300 transition-all"
-             (mousemove)="showMagnifiedImage($event)" (mouseleave)="showZoomedImage.set(false)">
-        <br>
-
-      @if(showZoomedImage()){
-        <div   class="zoomed-image hidden xl:block duration-300 absolute left-[400px] top-10 backdrop-blur-2xl shadow-2xl ">
-         <img [src]="mainImg" alt="" class="scale-[200%]">
-        </div>
-      }
-
+      <h1 class="text-capitalize">manage-warehouses works!</h1>
+        <img [src]="mainImg" class="w-[300px] duration-300 transition-all">
 
     </div>
 
@@ -41,13 +31,5 @@ export class ManageWarehouses {
   mainImg = this.img1;
 
   swapImages() {
-  }
-
-
-
-  protected showZoomedImage = signal(false);
-  protected showMagnifiedImage(evt: MouseEvent) {
-    this.showZoomedImage.set(true);
-    const zoomedImage = evt.target as HTMLImageElement;
   }
 }

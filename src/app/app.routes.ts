@@ -1,6 +1,7 @@
-import {Routes} from '@angular/router';
+import {ActivatedRouteSnapshot, RouterStateSnapshot, Routes} from '@angular/router';
 import {PageNotFound} from './pages/page-not-found';
 import {salesRoutes} from '../sales-app/sales-routes';
+import AppMenuHelper from '../shared/model/menu/appMenu';
 
 export const routes: Routes = [
   {
@@ -15,7 +16,15 @@ export const routes: Routes = [
     loadComponent: () => import("./pages/sales-page")
       .then(x => x.SalesPage),
     title: "Sales Dashboard",
-    children : salesRoutes
+    children : salesRoutes,
+    canActivate : [(activeRoute: ActivatedRouteSnapshot, routeState: RouterStateSnapshot) => {
+      const saleMenu  = AppMenuHelper.getMenus().find(x => x.routePath === "sales-dashboard");
+      if(saleMenu){
+        return saleMenu.isEnabled;
+      }
+      return false;
+
+    }],
   },
   {
     path: "crm-dashboard",

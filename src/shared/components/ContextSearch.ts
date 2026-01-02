@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
   template: `
     <div class="w-[250px] shadow dark:bg-surface-700 duration-300
     has-focus:dark:bg-surface-900 has-focus:dark:ring-primary-400
-    has-focus-within:scale-x-120 has-focus-within:scale-y-110
-    has-focus:dark:ring-2
+    has-focus-within:scale-x-120 has-focus-within:scale-y-110 2xl:has-focus-within:scale-y-120
+    has-focus:dark:ring-2 has-focus:ring-primary-800
     bg-white md:w-[380px] lg:w-[450px] py-1 rounded-[100vh] flex items-center">
       <span class="text-lg ms-2 me-2 grow-0 text-gray-400"><i class="la la-search"></i></span>
       <input type=" text" placeholder="Start searching here..."

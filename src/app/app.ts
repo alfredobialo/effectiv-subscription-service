@@ -6,7 +6,7 @@ import {AppUserNavbar} from './app-layout/appUserNavbar';
 import {MenuStateService} from './app-layout/MenuStateService';
 import {Router} from '@angular/router';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
-import {applyTheme, DEFAULT_THEME_KEY} from '../themes/ChangeThemeModel';
+import {applyDarkModeTheme, applyTheme, DEFAULT_THEME_KEY} from '../themes/ChangeThemeModel';
 
 @Component({
   selector: 'App',
@@ -39,6 +39,7 @@ export class App {
       const themeSetting = localStorage.getItem(DEFAULT_THEME_KEY);
       if(themeSetting) {
           applyTheme(themeSetting);
+          applyDarkModeTheme();
       }
       console.log("LocalStorage Settings",themeSetting);
     })
