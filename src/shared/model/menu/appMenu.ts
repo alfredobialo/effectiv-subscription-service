@@ -28,7 +28,7 @@ class AppMenuHelper {
         routePath: "sales-dashboard",
         component: "sales-page",
         index: 1,
-        isEnabled: false,
+        isEnabled: true,
         iconClass: "la-cart-plus",
         submenu : []
       },

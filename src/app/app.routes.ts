@@ -1,4 +1,4 @@
-import {ActivatedRouteSnapshot, RouterStateSnapshot, Routes} from '@angular/router';
+import {ActivatedRouteSnapshot, Route, RouterStateSnapshot, Routes, UrlSegment} from '@angular/router';
 import {PageNotFound} from './pages/page-not-found';
 import {salesRoutes} from '../sales-app/sales-routes';
 import AppMenuHelper from '../shared/model/menu/appMenu';
@@ -16,58 +16,66 @@ export const routes: Routes = [
     loadComponent: () => import("./pages/sales-page")
       .then(x => x.SalesPage),
     title: "Sales Dashboard",
-    children : salesRoutes,
-    canActivate : [(activeRoute: ActivatedRouteSnapshot, routeState: RouterStateSnapshot) => {
-      const saleMenu  = AppMenuHelper.getMenus().find(x => x.routePath === "sales-dashboard");
-      if(saleMenu){
+    children: salesRoutes,
+    /*canActivate: [(activeRoute: ActivatedRouteSnapshot, routeState: RouterStateSnapshot) => {
+      const saleMenu = AppMenuHelper.getMenus().find(x => x.routePath === "sales-dashboard");
+      if (saleMenu) {
         return saleMenu.isEnabled;
       }
       return false;
 
-    }],
+    }],*/
+    canMatch: [(route: Route, segments: UrlSegment[]) => {
+
+      const saleMenu = AppMenuHelper.getMenus().find(x => x.routePath === route.path);
+      if (saleMenu) {
+        return saleMenu.isEnabled;
+      }
+      return false;
+    }]
   },
   {
     path: "crm-dashboard",
     loadComponent: () => import("./pages/crm-dashboard-page")
       .then(x => x.CrmDashboardPage),
     title: "Crm Dashboard",
-    children : []
+    children: []
   },
   {
     path: "inventory-dashboard",
     loadComponent: () => import("./pages/inventory-page")
       .then(x => x.InventoryPage),
     title: "Inventory Dashboard",
-    children : []
+    children: []
   },
   {
     path: "project-dashboard",
     loadComponent: () => import("./pages/projects-page")
       .then(x => x.ProjectsPage),
     title: "Project Dashboard",
-    children : []
+    children: []
   },
   {
     path: "purchase-dashboard",
     loadComponent: () => import("./pages/purchase-page")
       .then(x => x.PurchasePage),
     title: "Purchase Manager Dashboard",
-    children : []
+    children: []
   },
   {
     path: "finance-dashboard",
     loadComponent: () => import("./pages/finance-page")
       .then(x => x.FinancePage),
     title: "CFO Dashboard",
-    children : []
+    children: []
   },
   {
     path: "security-dashboard",
     loadComponent: () => import("./pages/security-page")
       .then(x => x.SecurityPage),
     title: "Application Security Dashboard",
-    children : [],
-    canActivate : [ (activeRouteInfo, routerState) => {
+    children: [],
+    canActivate: [(activeRouteInfo, routerState) => {
       console.log("ROUTER CAN ACTIVATE Guard", activeRouteInfo, routerState);
       return true;
     }]
@@ -75,12 +83,12 @@ export const routes: Routes = [
 
 
   {
-    path:"",
+    path: "",
     redirectTo: "dashboard",
     pathMatch: "full",
   },
   {
-    path:"**",
+    path: "**",
     component: PageNotFound,
     title: "Page Not Found",
   }

@@ -9,7 +9,7 @@ import {usePreset} from '@primeng/themes';
     Menu
   ],
   template: `
-      <p-menu #themeMenu [model]="menuThemes()" ngSkipHydration  [popup]="true"></p-menu>
+      <p-menu #themeMenu [model]="menuThemes()"  [popup]="true"></p-menu>
       <button class="btn-circle" (click)="themeMenu.toggle($event)">
         <i class="la la-pen-fancy la-2x"></i>
       </button>

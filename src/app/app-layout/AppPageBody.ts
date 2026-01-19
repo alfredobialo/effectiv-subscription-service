@@ -25,7 +25,7 @@ import AppMenuHelper, {IAppMenu} from '../../shared/model/menu/appMenu';
         <div class="dark:bg-surface-800/60 bg-surface-300/60 backdrop-blur-sm block xl:flex justify-start items-center overflow-x-hidden h-[45px] px-3 sticky top-[82px] z-[120]">
           <h2>Static Nav Bar for Breadcrums</h2>
         </div>
-        <div class="py-4 px-4">
+        <div class="py-4 px-4 h-full">
           <router-outlet (activate)="onRouteActivated($event)"></router-outlet>
         </div>
       </div>

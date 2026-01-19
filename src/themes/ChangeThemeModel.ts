@@ -71,7 +71,7 @@ export function saveTheme(themeName: string) {
   localStorage.setItem(DEFAULT_THEME_KEY,themeName);
 }
 export function saveDarkMode(darkModeClass: string) {
-  console.log("SAVE_DARK_MODE_THEME CALLED", darkModeClass);
+
    localStorage.setItem(DEFAULT_DARK_KEY,darkModeClass);
    const htmlElem = document.querySelector("html");
    if(darkModeClass === ""){
@@ -97,5 +97,4 @@ export function applyDarkModeTheme() {
   else{
     htmlElem?.classList.add("theme");
   }
-  console.log("APPLY_DARK_MODE_THEME CALLED", darkMode);
 }
