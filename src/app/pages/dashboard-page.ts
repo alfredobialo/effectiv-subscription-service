@@ -8,7 +8,7 @@ import {BasePageComponent} from './BasePageComponent';
   template: `
     <div class="flex justify-between">
       <div class="flex-1">
-        <p class="text-2xl p-3 text-primary-500">
+        <p class="text-2xl p-3 text-primary-500 dark:text-primary-200">
           Welcome back
         </p>
       </div>
